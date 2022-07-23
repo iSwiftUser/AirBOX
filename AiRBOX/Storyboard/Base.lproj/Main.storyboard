@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2cE-YI-eVK">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="84I-T8-LP9">
+            <objects>
+                <viewController storyboardIdentifier="MapView" id="tz5-lo-IKT" customClass="MapViewController" customModule="AiRBOX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5AZ-kQ-MU8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVC-Yv-KSC">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <connections>
+                                    <outlet property="delegate" destination="tz5-lo-IKT" id="jKF-ub-JYo"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LR1-MN-YRh">
+                                <rect key="frame" x="345" y="64" width="41" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="Ffe-4j-QFI"/>
+                                    <constraint firstAttribute="width" constant="41" id="jj5-1M-nRQ"/>
+                                </constraints>
+                                <buttonConfiguration key="configuration" style="plain" image="cancel"/>
+                                <connections>
+                                    <action selector="closeButtonClicked:" destination="tz5-lo-IKT" eventType="touchUpInside" id="0o6-wb-IDb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uxX-vd-BOT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uxX-vd-BOT" firstAttribute="bottom" secondItem="DVC-Yv-KSC" secondAttribute="bottom" id="2ne-a1-hmE"/>
+                            <constraint firstItem="DVC-Yv-KSC" firstAttribute="top" secondItem="uxX-vd-BOT" secondAttribute="top" id="9jB-lr-yVs"/>
+                            <constraint firstItem="LR1-MN-YRh" firstAttribute="top" secondItem="uxX-vd-BOT" secondAttribute="top" constant="20" id="HPG-5Z-FYT"/>
+                            <constraint firstItem="uxX-vd-BOT" firstAttribute="trailing" secondItem="DVC-Yv-KSC" secondAttribute="trailing" id="SgF-89-0xM"/>
+                            <constraint firstItem="uxX-vd-BOT" firstAttribute="trailing" secondItem="LR1-MN-YRh" secondAttribute="trailing" constant="28" id="fYH-f3-lpI"/>
+                            <constraint firstItem="DVC-Yv-KSC" firstAttribute="leading" secondItem="uxX-vd-BOT" secondAttribute="leading" id="xiB-dm-XfK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="DVC-Yv-KSC" id="N0s-Fe-yal"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FDg-TO-Elw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1834" y="133"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xBK-LW-Wyn">
+            <objects>
+                <viewController id="2cE-YI-eVK" customClass="ViewController" customModule="AiRBOX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wzs-Ac-Inf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iTL-Uo-hs8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </arscnView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Move camera around to detect planes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3iX-kh-fbB">
+                                <rect key="frame" x="0.0" y="769" width="414" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="dSy-Bf-Yi3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.89999997615814209" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4z-Hi-shT">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="Load" image="restore" id="lwQ-3C-ful">
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="loadBarButtonItemDidTouch:" destination="2cE-YI-eVK" id="KIj-zh-iYb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="R1v-RW-41G"/>
+                                    <barButtonItem title="reset" image="reset" id="NzN-Fb-nyq">
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="resetBarButtonItemDidTouch:" destination="2cE-YI-eVK" id="4Uf-RY-HPa"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="A8o-0F-PAG"/>
+                                    <barButtonItem title="map" image="map" id="ZXL-eS-RGm">
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="didClickMapViewBarButton:" destination="2cE-YI-eVK" id="2Fz-md-5ri"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Qpg-wo-mlC"/>
+                                    <barButtonItem title="save" image="save" id="n6I-O2-5TW">
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="saveBarButtonItemDidTouch:" destination="2cE-YI-eVK" id="KyN-sw-Q3g"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </toolbar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QuX-cX-HUB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="z4z-Hi-shT" firstAttribute="top" secondItem="3iX-kh-fbB" secondAttribute="bottom" id="29M-8U-9G0"/>
+                            <constraint firstAttribute="trailing" secondItem="iTL-Uo-hs8" secondAttribute="trailing" id="ObC-w6-PVy"/>
+                            <constraint firstAttribute="trailing" secondItem="3iX-kh-fbB" secondAttribute="trailing" id="QEa-dr-cGS"/>
+                            <constraint firstAttribute="trailing" secondItem="z4z-Hi-shT" secondAttribute="trailing" id="Wfg-42-gsJ"/>
+                            <constraint firstItem="iTL-Uo-hs8" firstAttribute="leading" secondItem="Wzs-Ac-Inf" secondAttribute="leading" id="c4w-ze-6U6"/>
+                            <constraint firstItem="z4z-Hi-shT" firstAttribute="bottom" secondItem="QuX-cX-HUB" secondAttribute="bottom" id="c6B-z7-XwB"/>
+                            <constraint firstItem="iTL-Uo-hs8" firstAttribute="top" secondItem="Wzs-Ac-Inf" secondAttribute="top" id="e1G-dT-AA6"/>
+                            <constraint firstItem="z4z-Hi-shT" firstAttribute="leading" secondItem="Wzs-Ac-Inf" secondAttribute="leading" id="fnq-yD-Nw0"/>
+                            <constraint firstItem="3iX-kh-fbB" firstAttribute="leading" secondItem="Wzs-Ac-Inf" secondAttribute="leading" id="nTe-SP-twv"/>
+                            <constraint firstAttribute="bottom" secondItem="iTL-Uo-hs8" secondAttribute="bottom" id="pRJ-0C-hDX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="3iX-kh-fbB" id="x96-Zl-sUI"/>
+                        <outlet property="sceneView" destination="iTL-Uo-hs8" id="dhz-oP-Ig0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JQR-Fd-hPe" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cancel" width="25" height="25"/>
+        <image name="map" width="25" height="25"/>
+        <image name="reset" width="25" height="25"/>
+        <image name="restore" width="25" height="25"/>
+        <image name="save" width="25" height="25"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
