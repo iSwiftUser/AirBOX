@@ -1,6 +1,6 @@
 # AirBOX
 
-App can create ARkit enable 3d boxes with user slected image. 
+App can create ARkit enable 3d boxes with user selected image. 
 
 
 User can save and retrieve them at later point.
